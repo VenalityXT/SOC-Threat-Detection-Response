@@ -36,8 +36,6 @@
 This SOC lab simulates a production-ready security monitoring environment using **Splunk** for log analysis and real-time alerting, paired with **Ansible** for automated incident response.  
 It demonstrates a full detection-to-response lifecycle, including enrichment, normalization, threat hunting, dashboarding, and automated containment actions.
 
-[Insert Image of SOC Workflow or Splunk Dashboard Here]
-
 ---
 
 ## <span style="color:#2b6cb0">Why This SOC Lab Matters</span>
@@ -86,8 +84,6 @@ It demonstrates a full detection-to-response lifecycle, including enrichment, no
 - **Enhanced SOC visibility and workflow efficiency**  
   *Optimized queries, normalized log fields, and reduced manual triage by over 50%.*
 
-[Insert Image of Splunk Dashboard with Alert Example Here]
-
 ---
 
 ## <span style="color:#2b6cb0">Skills Demonstrated</span>
@@ -106,13 +102,6 @@ It demonstrates a full detection-to-response lifecycle, including enrichment, no
 
 - **SOC Workflow Optimization**  
   Improved detection and response cycles through correlation, automation, and tuning.
-
----
-
-## <span style="color:#2b6cb0">SOC Architecture & Data Flow</span>
-
-### Architecture Diagram  
-*(Insert SOC Diagram Here)*
 
 ---
 
