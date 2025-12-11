@@ -11,7 +11,6 @@ This repository documents the simulation of a modern Security Operations Center 
 - [Setup and Configuration Guide](#setup-and-configuration-guide)  
 - [Repository Structure](#repository-structure)  
 - [Recommendations for Future Enhancements](#recommendations-for-future-enhancements)  
-- [License](#license)  
 
 ## Project Overview
 This lab simulates a functional SOC leveraging Splunk for real-time log ingestion and analysis, along with Ansible for automating response actions. It is designed to validate technical proficiency in detecting and responding to security incidents using scalable and realistic tooling.
