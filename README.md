@@ -142,8 +142,3 @@ SOC-Threat-Detection-Response/
 - Simulate multi-tenant logging to validate scalability of SOC infrastructure.  
 - Expand Ansible integrations to include third-party SIEMs or EDR platforms.
 
----
-
-## License
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
