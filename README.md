@@ -1,101 +1,185 @@
 # SOC Threat Detection & Response Lab
 
-This repository documents the simulation of a modern Security Operations Center (SOC) using Splunk and Ansible to emulate real-world detection, alerting, and automated incident response workflows. It showcases practical capabilities in security monitoring, data analysis, and security automation.
+[![Splunk](https://img.shields.io/badge/SIEM-Splunk-orange?logo=splunk)]()
+[![Ansible](https://img.shields.io/badge/Automation-Ansible-red?logo=ansible)]()
+[![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)]()
+[![Threat Detection](https://img.shields.io/badge/Focus-Threat%20Detection-yellow)]()
+[![Log Analysis](https://img.shields.io/badge/Skill-Log%20Analysis-lightgrey)]()
+[![SOC Operations](https://img.shields.io/badge/Role-SOC%20Operations-blueviolet)]()
+[![Python](https://img.shields.io/badge/Scripting-Python-blue?logo=python)]()
+[![Wireshark](https://img.shields.io/badge/Tool-Wireshark-0090ff?logo=wireshark)]()
+
+---
+
+## <span style="color:#2b6cb0">Executive Summary</span>
+
+> A hands-on SOC simulation lab implementing Splunk and Ansible to detect, analyze, and automate responses to security incidents. Designed to demonstrate real-world SOC capabilities including log ingestion, dashboarding, alerting, threat detection, incident analysis, and automated response workflows.
+
+---
 
 ## Table of Contents
-- [Project Overview](#project-overview)  
-- [Technologies Used](#technologies-used)  
-- [Objectives](#objectives)  
-- [Key Achievements](#key-achievements)  
-- [Skills Demonstrated](#skills-demonstrated)  
-- [Setup and Configuration Guide](#setup-and-configuration-guide)  
-- [Repository Structure](#repository-structure)  
-- [Recommendations for Future Enhancements](#recommendations-for-future-enhancements)  
+- [Threat Detection Overview](#threat-detection-overview)
+- [Why This SOC Lab Matters](#why-this-soc-lab-matters)
+- [SOC Technologies Used](#soc-technologies-used)
+- [Objectives](#objectives)
+- [Key SOC Achievements](#key-soc-achievements)
+- [Skills Demonstrated](#skills-demonstrated)
+- [SOC Architecture & Data Flow](#soc-architecture--data-flow)
+- [Detection & Response Workflow](#detection--response-workflow)
+- [Repository Structure](#repository-structure)
+- [Recommendations for Future Enhancements](#recommendations-for-future-enhancements)
 
-## Project Overview
-This lab simulates a functional SOC leveraging Splunk for real-time log ingestion and analysis, along with Ansible for automating response actions. It is designed to validate technical proficiency in detecting and responding to security incidents using scalable and realistic tooling.
+---
 
-[Insert Image of SOC Workflow or Splunk Dashboard Here]  
+## <span style="color:#2b6cb0">Threat Detection Overview</span>
 
-## Technologies Used
-- Splunk – Log aggregation, alerting, and dashboarding  
-- Ansible – Automated configuration and incident response  
-- Wireshark – Packet analysis  
-- Linux (Ubuntu) – Host OS for deploying scripts and agents  
+This SOC lab simulates a production-ready security monitoring environment using **Splunk** for log analysis and real-time alerting, paired with **Ansible** for automated incident response.  
+It demonstrates a full detection-to-response lifecycle, including enrichment, normalization, threat hunting, dashboarding, and automated containment actions.
 
-## Objectives
-- Configure a centralized SOC environment for ingesting and analyzing security data  
-- Build real-time Splunk dashboards to visualize trends and detect anomalies  
-- Define alert conditions and automate triggers based on identified threats  
-- Integrate Ansible for responsive actions based on triggered alerts  
+[Insert Image of SOC Workflow or Splunk Dashboard Here]
 
-## Key Achievements
-- **Deployed a functional SOC environment**  
-  *Set up Splunk to monitor over 110,000 log events from multiple sources including Linux auth logs and web access logs.*
+---
 
-- **Developed 3 custom dashboards**  
-  *Built dashboards tracking failed logins, geographic anomalies, and user behavior patterns, improving situational awareness.*
+## <span style="color:#2b6cb0">Why This SOC Lab Matters</span>
 
-- **Configured 5 dynamic alerts**  
-  *Designed threshold-based alerts to detect and escalate suspicious activity, reducing detection time by ~60%.*
+- Models the core functions of a modern Security Operations Center  
+- Demonstrates detection engineering and alert pipeline design  
+- Incorporates automated response to reduce analyst workload  
+- Provides hands-on experience analyzing 100k+ log events  
+- Validates operational SOC skills used in Tier 1–2 analyst roles  
 
-- **Automated 2 high-priority responses**  
-  *Integrated Ansible playbooks with Splunk alerts to automate containment actions, cutting manual response time significantly.*
+---
 
-- **Enhanced operational efficiency**  
-  *Optimized detection and response workflows, resulting in a 40% improvement in the lab’s incident response cycle.*
+## <span style="color:#2b6cb0">SOC Technologies Used</span>
 
-[Insert Image of Splunk Dashboard with Alert Example Here]  
+- **Splunk** → Log ingestion, correlation, dashboards, alerts  
+- **Ansible** → Automated response playbooks  
+- **Wireshark** → Network traffic analysis  
+- **Linux (Ubuntu)** → Host environment for forwarders, scripts, and automation  
 
-## Skills Demonstrated
-- **Threat Detection at Scale**  
-  Analyzed large datasets using Splunk queries and regular expressions to extract indicators of compromise.  
+---
 
-- **Data Normalization and Tagging**  
-  Created event types and applied field tags for faster correlation and consistent data formatting.  
+## <span style="color:#2b6cb0">Objectives</span>
+
+- Build a centralized SOC environment with structured log ingestion  
+- Develop real-time dashboards for threat visibility  
+- Create Splunk correlation searches and dynamic alerts  
+- Automate incident response using Ansible-driven workflows  
+- Improve detection and response times through automation  
+
+---
+
+## <span style="color:#2b6cb0">Key SOC Achievements</span>
+
+- **Deployed a functional SOC monitoring environment**  
+  *Ingested over **110,000 log events** across multiple Linux systems and web servers.*
+
+- **Developed 3 actionable dashboards**  
+  *Built panels monitoring failed logins, geolocation anomalies, and user access behavior.*
+
+- **Configured 5 dynamic correlation alerts**  
+  *Detection time reduced by ~60% through real-time threshold-based monitoring.*
+
+- **Automated two high-severity response actions**  
+  *Ansible playbooks executed containment tasks, improving response speed by ~40%.*
+
+- **Enhanced SOC visibility and workflow efficiency**  
+  *Optimized queries, normalized log fields, and reduced manual triage by over 50%.*
+
+[Insert Image of Splunk Dashboard with Alert Example Here]
+
+---
+
+## <span style="color:#2b6cb0">Skills Demonstrated</span>
+
+- **Threat Detection & Log Analysis**  
+  Extracted indicators using SPL queries, regex, field extractions, and event types.
+
+- **Data Normalization & Enrichment**  
+  Applied tags, aliases, extractions, and transforms for consistent event formatting.
 
 - **Incident Response Automation**  
-  Wrote and linked Ansible playbooks to alerts for tasks like isolating hosts or gathering forensic data.  
+  Integrated Ansible playbooks that disable accounts, isolate hosts, and gather forensics.
 
-- **Real-Time Monitoring**  
-  Maintained dashboards with 5-minute data refresh cycles to provide ongoing security visibility.  
+- **Dashboard Engineering**  
+  Created visual panels with 5-minute auto-refresh cycles for live SOC monitoring.
 
-- **Efficient Security Operations**  
-  Reduced manual triage efforts by over 50% using integrated alert-to-action workflows.  
-
----
-
-## Setup and Configuration Guide
-
-### 1. Splunk Deployment
-- Installed Splunk Enterprise on Ubuntu.
-- Configured Splunk Forwarders to ingest logs from client systems.
-- Created indexes for structured storage and faster search performance.
-
-### 2. Log Source Integration
-- Ingested system logs (`/var/log/auth.log`, Apache logs).
-- Developed field extractions and transforms to normalize log fields.
-
-### 3. Dashboard Development
-- Dashboard 1: Failed login attempt summary 
-- Dashboard 2: Geolocation anomalies using IP data
-- Dashboard 3: User behavior trends over time
-
-### 4. Alerting Mechanism
-- Alerts triggered by:
-  - Rapid login failures from single IPs
-  - Logins from unusual geographic locations
-  - Spikes in HTTP 500 errors
-- Configured alert actions to send messages or trigger automation scripts.
-
-### 5. Ansible Automation
-- Playbook 1: Disable suspicious accounts and collect logs.
-- Playbook 2: Isolate endpoints showing malicious behavior.
-- Integrated playbooks with Splunk alerts via HTTP Event Collector (HEC) and CLI runners.
+- **SOC Workflow Optimization**  
+  Improved detection and response cycles through correlation, automation, and tuning.
 
 ---
 
-## Repository Structure
+## <span style="color:#2b6cb0">SOC Architecture & Data Flow</span>
+
+### Architecture Diagram  
+*(Insert SOC Diagram Here)*
+
+---
+
+<details>
+<summary><strong>View Data Flow Breakdown</strong></summary>
+
+1. **Log Forwarders → Splunk Indexers**  
+   System logs, authentication logs, and web access logs are normalized and indexed.
+
+2. **Dashboards Render Real-Time Metrics**  
+   Panels highlight anomalous spikes, login patterns, and error thresholds.
+
+3. **Correlation Searches Trigger Alerts**  
+   Threshold-based and anomaly-based detections identify suspicious behavior.
+
+4. **Splunk → Ansible Bridge**  
+   Alerts invoke automated playbooks for response, isolation, or data gathering.
+
+5. **Automated Response Actions**  
+   Hosts are isolated, accounts disabled, or logs collected depending on severity.
+
+</details>
+
+---
+
+## <span style="color:#2b6cb0">Detection & Response Workflow</span>
+
+```
+Event → Log Ingest → Normalization → Dashboard Analysis → Alert Trigger → Ansible Automation → Containment
+```
+
+<details>
+<summary><strong>View Workflow Steps</strong></summary>
+
+### 1. Splunk Deployment  
+- Installed Splunk Enterprise on Ubuntu  
+- Configured forwarders and indexing pipelines  
+
+### 2. Log Source Integration  
+- Ingested `/var/log/auth.log` and Apache access logs  
+- Built field extractions for usernames, IPs, HTTP error codes  
+
+### 3. Dashboard Engineering  
+- Failed Login Tracker  
+- Geolocation Anomaly Panel  
+- User Activity Heatmap  
+
+### 4. Alerting Pipeline  
+- Alerts for brute-force patterns  
+- Geo-anomalous logins  
+- HTTP 500 spikes  
+- Configured messages + automation hooks
+
+### 5. Automated Response (Ansible)  
+- Disable compromised accounts  
+- Isolate suspicious endpoints  
+- Gather logs or snapshots for evidence  
+- Executed via Splunk → HEC → CLI playbook runners  
+
+</details>
+
+---
+
+## <span style="color:#2b6cb0">Repository Structure</span>
+
+<details>
+<summary><strong>View File Tree</strong></summary>
 
 ```
 SOC-Threat-Detection-Response/
@@ -128,16 +212,20 @@ SOC-Threat-Detection-Response/
 │   ├── Dashboard3.json.txt
 │   └── soc-threat-overview-2025-01-11.pdf
 
-├── README.md
-├── LICENSE
+└── README.md
 ```
+
+</details>
 
 ---
 
-## Recommendations for Future Enhancements
-- Integrate threat intelligence feeds to correlate known indicators with local events.  
-- Automate additional remediation steps such as dynamic firewall rule adjustments.  
-- Apply user behavior analytics (UBA) to detect lateral movement or privilege abuse.  
-- Simulate multi-tenant logging to validate scalability of SOC infrastructure.  
-- Expand Ansible integrations to include third-party SIEMs or EDR platforms.
+## <span style="color:#2b6cb0">Recommendations for Future Enhancements</span>
+
+- Integrate external threat intelligence feeds (e.g., AbuseIPDB, MISP)  
+- Automate firewall adjustments through Ansible or API calls  
+- Add user behavior analytics (UBA) for lateral movement detection  
+- Test multi-tenant architectures to validate SIEM scalability  
+- Expand automation playbooks to support EDR or SOAR tooling  
+
+---
 
