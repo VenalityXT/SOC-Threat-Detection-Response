@@ -13,7 +13,7 @@
 
 ## <span style="color:#2b6cb0">Executive Summary</span>
 
-> A hands-on SOC simulation lab implementing Splunk and Ansible to detect, analyze, and automate responses to security incidents. Designed to demonstrate real-world SOC capabilities including log ingestion, dashboarding, alerting, threat detection, incident analysis, and automated response workflows.
+> A hands-on SOC simulation lab implementing Splunk and Ansible to detect, analyze, and automate responses to security incidents. This lab demonstrates real-world SOC capabilities, including log ingestion, dashboarding, alerting, threat detection, incident analysis, and automated response workflows.
 
 ---
 
@@ -22,8 +22,7 @@
 - [Why This SOC Lab Matters](#why-this-soc-lab-matters)
 - [SOC Technologies Used](#soc-technologies-used)
 - [Objectives](#objectives)
-- [Key SOC Achievements](#key-soc-achievements)
-- [Skills Demonstrated](#skills-demonstrated)
+- [Key Problem-Solving Experiences](#key-problem-solving-experiences)
 - [SOC Architecture & Data Flow](#soc-architecture--data-flow)
 - [Detection & Response Workflow](#detection--response-workflow)
 - [Repository Structure](#repository-structure)
@@ -36,92 +35,81 @@
 This SOC lab simulates a production-ready security monitoring environment using **Splunk** for log analysis and real-time alerting, paired with **Ansible** for automated incident response.  
 It demonstrates a full detection-to-response lifecycle, including enrichment, normalization, threat hunting, dashboarding, and automated containment actions.
 
+> [!TIP]
+> This lab simulates a **real-world SOC environment**, providing practical skills in both **detection engineering** and **incident response automation**.
+
 ---
 
 ## <span style="color:#2b6cb0">Why This SOC Lab Matters</span>
 
-- Models the core functions of a modern Security Operations Center  
-- Demonstrates detection engineering and alert pipeline design  
-- Incorporates automated response to reduce analyst workload  
-- Provides hands-on experience analyzing 100k+ log events  
-- Validates operational SOC skills used in Tier 1–2 analyst roles  
+Building a **Security Operations Center** from scratch provides valuable insights into what a **real SOC** looks like. Here’s why it matters:
+
+- **Hands-on experience**: Working with 100k+ log events mirrors the type of data SOC analysts handle daily.
+- **Real-world relevance**: Designed to simulate live, real-time incident detection, it goes beyond theory into **practical application**.
+- **Automation in SOC**: Using Ansible to automate response actions frees up analysts for more critical tasks.
+
+Rather than simply watching a tutorial, this lab provides a **learning-by-doing** approach.
 
 ---
 
 ## <span style="color:#2b6cb0">SOC Technologies Used</span>
 
-- **Splunk** → Log ingestion, correlation, dashboards, alerts  
-- **Ansible** → Automated response playbooks  
-- **Wireshark** → Network traffic analysis  
-- **Linux (Ubuntu)** → Host environment for forwarders, scripts, and automation  
+This lab integrates multiple technologies to simulate a functioning SOC environment:
+
+- **Splunk** for ingesting logs, building dashboards, and triggering alerts.  
+- **Ansible** for automating playbooks and handling incident responses.  
+- **Wireshark** for network traffic analysis and packet-level event correlation.  
+- **Ubuntu Linux** for system configuration, forwarders, and script execution.
+
+These technologies allow for a **comprehensive** SOC simulation experience.
 
 ---
 
-## <span style="color:#2b6cb0">Objectives</span>
+## <span style="color:#2b6cb0">Key Problem-Solving Experiences</span>
 
-- Build a centralized SOC environment with structured log ingestion  
-- Develop real-time dashboards for threat visibility  
-- Create Splunk correlation searches and dynamic alerts  
-- Automate incident response using Ansible-driven workflows  
-- Improve detection and response times through automation  
+<details>
+<summary><strong>Problem 1: Handling a Flood of Log Data</strong></summary>
 
----
+**Challenge:**  
+The lab’s early stages revealed how overwhelming **log ingestion** can become with **large volumes** of data — especially when it’s unstructured or lacks critical context.
 
-## <span style="color:#2b6cb0">Key SOC Achievements</span>
+**Solution:**  
+- Configured **custom Splunk queries** to focus on key indicators (failed logins, unusual geo-locations).
+- Integrated **Wireshark** to supplement Splunk data and gain deeper visibility into network activity.
+</details>
 
-- **Deployed a functional SOC monitoring environment**  
-  *Ingested over **110,000 log events** across multiple Linux systems and web servers.*
+<details>
+<summary><strong>Problem 2: Improving Incident Response Efficiency</strong></summary>
 
-- **Developed 3 actionable dashboards**  
-  *Built panels monitoring failed logins, geolocation anomalies, and user access behavior.*
+**Challenge:**  
+Manual response to detected threats was time-consuming and inconsistent. The goal was to improve **response times** and reduce **human error**.
 
-- **Configured 5 dynamic correlation alerts**  
-  *Detection time reduced by ~60% through real-time threshold-based monitoring.*
+**Solution:**  
+- Implemented **Ansible playbooks** to automate critical tasks, such as isolating compromised machines and disabling accounts.
+</details>
 
-- **Automated two high-severity response actions**  
-  *Ansible playbooks executed containment tasks, improving response speed by ~40%.*
+<details>
+<summary><strong>Problem 3: Building Real-Time Dashboards</strong></summary>
 
-- **Enhanced SOC visibility and workflow efficiency**  
-  *Optimized queries, normalized log fields, and reduced manual triage by over 50%.*
+**Challenge:**  
+Before dashboarding, it was hard to get a comprehensive view of SOC activity, and critical threats would sometimes be missed.
 
----
-
-## <span style="color:#2b6cb0">Skills Demonstrated</span>
-
-- **Threat Detection & Log Analysis**  
-  Extracted indicators using SPL queries, regex, field extractions, and event types.
-
-- **Data Normalization & Enrichment**  
-  Applied tags, aliases, extractions, and transforms for consistent event formatting.
-
-- **Incident Response Automation**  
-  Integrated Ansible playbooks that disable accounts, isolate hosts, and gather forensics.
-
-- **Dashboard Engineering**  
-  Created visual panels with 5-minute auto-refresh cycles for live SOC monitoring.
-
-- **SOC Workflow Optimization**  
-  Improved detection and response cycles through correlation, automation, and tuning.
+**Solution:**  
+- Developed **three dynamic dashboards** to provide real-time visibility into failed login attempts, geolocation anomalies, and user access patterns.
+</details>
 
 ---
+
+## <span style="color:#2b6cb0">SOC Architecture & Data Flow</span>
 
 <details>
 <summary><strong>View Data Flow Breakdown</strong></summary>
 
-1. **Log Forwarders → Splunk Indexers**  
-   System logs, authentication logs, and web access logs are normalized and indexed.
-
-2. **Dashboards Render Real-Time Metrics**  
-   Panels highlight anomalous spikes, login patterns, and error thresholds.
-
-3. **Correlation Searches Trigger Alerts**  
-   Threshold-based and anomaly-based detections identify suspicious behavior.
-
-4. **Splunk → Ansible Bridge**  
-   Alerts invoke automated playbooks for response, isolation, or data gathering.
-
-5. **Automated Response Actions**  
-   Hosts are isolated, accounts disabled, or logs collected depending on severity.
+- **Log Forwarders → Splunk Indexers:** Normalizes and indexes system and application logs.
+- **Dashboards Render Real-Time Metrics:** Visualizes metrics like failed login attempts, geolocation anomalies, and other threshold-based metrics.
+- **Correlation Searches Trigger Alerts:** Threshold-based and anomaly-based detections identify suspicious behavior.
+- **Splunk → Ansible Bridge:** Alerts trigger automated response playbooks to isolate compromised machines or disable accounts.
+- **Automated Response Actions:** Depending on alert severity, tasks like isolation or account disabling are automated, improving containment speed.
 
 </details>
 
@@ -129,82 +117,45 @@ It demonstrates a full detection-to-response lifecycle, including enrichment, no
 
 ## <span style="color:#2b6cb0">Detection & Response Workflow</span>
 
-```
-Event → Log Ingest → Normalization → Dashboard Analysis → Alert Trigger → Ansible Automation → Containment
-```
-
-<details>
-<summary><strong>View Workflow Steps</strong></summary>
-
-### 1. Splunk Deployment  
-- Installed Splunk Enterprise on Ubuntu  
-- Configured forwarders and indexing pipelines  
-
-### 2. Log Source Integration  
-- Ingested `/var/log/auth.log` and Apache access logs  
-- Built field extractions for usernames, IPs, HTTP error codes  
-
-### 3. Dashboard Engineering  
-- Failed Login Tracker  
-- Geolocation Anomaly Panel  
-- User Activity Heatmap  
-
-### 4. Alerting Pipeline  
-- Alerts for brute-force patterns  
-- Geo-anomalous logins  
-- HTTP 500 spikes  
-- Configured messages + automation hooks
-
-### 5. Automated Response (Ansible)  
-- Disable compromised accounts  
-- Isolate suspicious endpoints  
-- Gather logs or snapshots for evidence  
-- Executed via Splunk → HEC → CLI playbook runners  
-
-</details>
+<img width="1700" height="965" alt="image" src="https://github.com/user-attachments/assets/e13d1799-5a5f-4235-8a26-14bc3cefb149" />
 
 ---
 
 ## <span style="color:#2b6cb0">Repository Structure</span>
 
-<details>
-<summary><strong>View File Tree</strong></summary>
-
 ```
 SOC-Threat-Detection-Response/
 
 ├── Ansible-Playbooks/
-│   ├── playbook1.yml.txt
-│   └── playbook2.yml.txt
+│ ├── playbook1.yml.txt
+│ └── playbook2.yml.txt
 
 ├── Configurations/
-│   ├── Ansible-Configs/
-│   │   ├── ansible-hosts.txt
-│   │   └── ansible-vars-yml.txt
-│   └── Splunk-Alert-Configs/
-│       ├── alert1.conf.txt
-│       └── alert2.conf.txt
+│ ├── Ansible-Configs/
+│ │ ├── ansible-hosts.txt
+│ │ └── ansible-vars-yml.txt
+│ └── Splunk-Alert-Configs/
+│ ├── alert1.conf.txt
+│ └── alert2.conf.txt
 
 ├── Documentation/
-│   ├── Ansible-Playbook-Usage.md
-│   ├── Dashboard-Descriptions.md
-│   ├── Login-Attempts-Analysis-Report.md
-│   └── Splunk-Alert-Configuration.md
+│ ├── Ansible-Playbook-Usage.md
+│ ├── Dashboard-Descriptions.md
+│ ├── Login-Attempts-Analysis-Report.md
+│ └── Splunk-Alert-Configuration.md
 
 ├── Logs-Samples/
-│   ├── sample-log1.log.txt
-│   └── sample-log2.log.txt
+│ ├── sample-log1.log.txt
+│ └── sample-log2.log.txt
 
 ├── Splunk-Dashboards/
-│   ├── Dashboard1.json.txt
-│   ├── Dashboard2.json.txt
-│   ├── Dashboard3.json.txt
-│   └── soc-threat-overview-2025-01-11.pdf
+│ ├── Dashboard1.json.txt
+│ ├── Dashboard2.json.txt
+│ ├── Dashboard3.json.txt
+│ └── soc-threat-overview-2025-01-11.pdf
 
 └── README.md
 ```
-
-</details>
 
 ---
 
